@@ -2,100 +2,103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>3 Months With You 🤍</title>
+<title>Bhumi 🤍</title>
 
 <style>
 body {
   margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: black;
+  overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #2b2b2b;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 380px;
+.slide {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+img, video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-h1 {
-  color: #e75480;
+.overlay h1 {
   font-size: 32px;
 }
 
-p {
+.overlay p {
   font-size: 16px;
-  line-height: 1.6;
 }
 
-.heart {
-  font-size: 40px;
-  animation: beat 1.2s infinite;
-}
-
-@keyframes beat {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-
-audio {
+.btn {
+  display: inline-block;
   margin-top: 15px;
-  width: 100%;
+  padding: 12px 24px;
+  background: #e75480;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-  <div class="heart">💖</div>
-
-  <h1>Happy 3 Months, Bhumi 🤍</h1>
-
-  <p>
-    These 3 months with you  
-    have been the most beautiful part of my life.
-  </p>
-
-  <p>
-    From small talks to deep feelings,  
-    from laughs to understanding silences —  
-    you became my comfort, my peace, my favorite person.
-  </p>
-
-  <p>
-    Loving you feels easy.  
-    Being with you feels right.
-  </p>
-
-  <p>
-    Thank you for choosing me.  
-    Thank you for staying.  
-    Thank you for being you.
-  </p>
-
-  <p>
-    This is just the beginning…  
-    but I already want forever with you.
-  </p>
-
-  <p><b>I love you. Always.</b></p>
-
-  <audio controls>
-    <source src="https://dl.sndup.net/dkzm/ILoveYouSo.mp3" type="audio/mpeg">
-  </audio>
-
-  <p style="font-size:13px;">🎧 I Love You So – The Walters</p>
+<!-- PHOTO SLIDE -->
+<div class="slide active">
+  <img src="photo.jpg">
 </div>
+
+<!-- VIDEO SLIDE -->
+<div class="slide">
+  <video autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="overlay">
+  <h1>Bhumi 🤍</h1>
+  <p>
+    3 months of us.<br>
+    And I already want forever with you.
+  </p>
+
+  <a class="btn"
+     href="https://www.youtube.com/watch?v=NwFVSclD_uc"
+     target="_blank">
+     🎧 I Love You So
+  </a>
+</div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+}, 5000);
+</script>
 
 </body>
 </html>
