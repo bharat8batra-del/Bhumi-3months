@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,10 +42,12 @@ img, video {
 
 .overlay h1 {
   font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .overlay p {
   font-size: 16px;
+  line-height: 1.6;
 }
 
 .btn {
@@ -54,7 +56,7 @@ img, video {
   padding: 12px 24px;
   background: #e75480;
   color: white;
-  border-radius: 30px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -63,23 +65,28 @@ img, video {
 
 <body>
 
-<!-- PHOTO SLIDE -->
+<!-- SLIDE 1: PHOTO -->
 <div class="slide active">
   <img src="photo.jpg">
 </div>
 
-<!-- VIDEO SLIDE -->
+<!-- SLIDE 2: VIDEO -->
 <div class="slide">
   <video autoplay muted loop playsinline>
     <source src="video.mp4" type="video/mp4">
   </video>
 </div>
 
+<!-- TEXT OVERLAY -->
 <div class="overlay">
   <h1>Bhumi 🤍</h1>
   <p>
-    3 months of us.<br>
-    And I already want forever with you.
+    Happy 3 months, my love! 💖<br>
+    Every moment with you feels magical.<br>
+    From our silly laughs to quiet talks,<br>
+    you make my heart so full.<br>
+    I can’t wait for all the memories we’ll create together.<br>
+    You’re my happiness, my comfort, my forever.
   </p>
 
   <a class="btn"
@@ -89,6 +96,7 @@ img, video {
   </a>
 </div>
 
+<!-- SLIDESHOW SCRIPT -->
 <script>
 let slides = document.querySelectorAll('.slide');
 let index = 0;
@@ -97,7 +105,7 @@ setInterval(() => {
   slides[index].classList.remove('active');
   index = (index + 1) % slides.length;
   slides[index].classList.add('active');
-}, 5000);
+}, 5000); // switch slides every 5 seconds
 </script>
 
 </body>
